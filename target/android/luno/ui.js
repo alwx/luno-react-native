@@ -26,12 +26,6 @@ luno.ui.drawer_layout = reagent.core.adapt_react_class.call(null,React.DrawerLay
 luno.ui.drawer = reagent.core.adapt_react_class.call(null,MaterialDesign.Drawer);
 luno.ui.drawer_header = reagent.core.adapt_react_class.call(null,MaterialDesign.Drawer.Header);
 luno.ui.drawer_section = reagent.core.adapt_react_class.call(null,MaterialDesign.Drawer.Section);
-luno.ui.tab_bar_ios = (function luno$ui$tab_bar_ios(){
-return reagent.core.adapt_react_class.call(null,React.TabBarIOS);
-});
-luno.ui.tab_bar_ios_item = (function luno$ui$tab_bar_ios_item(){
-return reagent.core.adapt_react_class.call(null,React.TabBarIOS.Item);
-});
 luno.ui.intent_android = React.IntentAndroid;
 luno.ui.show_dialog_android = (function luno$ui$show_dialog_android(props){
 var dialog = (new AndroidDialog());
@@ -39,11 +33,11 @@ dialog.set(cljs.core.clj__GT_js.call(null,props));
 
 return dialog.show();
 });
-luno.ui.show_dialog_ios = (function luno$ui$show_dialog_ios(p__21236){
-var map__21239 = p__21236;
-var map__21239__$1 = ((((!((map__21239 == null)))?((((map__21239.cljs$lang$protocol_mask$partition0$ & (64))) || (map__21239.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21239):map__21239);
-var text = cljs.core.get.call(null,map__21239__$1,new cljs.core.Keyword(null,"text","text",-1790561697));
-var callback = cljs.core.get.call(null,map__21239__$1,new cljs.core.Keyword(null,"callback","callback",-705136228));
+luno.ui.show_dialog_ios = (function luno$ui$show_dialog_ios(p__18045){
+var map__18048 = p__18045;
+var map__18048__$1 = ((((!((map__18048 == null)))?((((map__18048.cljs$lang$protocol_mask$partition0$ & (64))) || (map__18048.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__18048):map__18048);
+var text = cljs.core.get.call(null,map__18048__$1,new cljs.core.Keyword(null,"text","text",-1790561697));
+var callback = cljs.core.get.call(null,map__18048__$1,new cljs.core.Keyword(null,"callback","callback",-705136228));
 return React.AlertIOS.prompt(text,null,callback);
 });
 

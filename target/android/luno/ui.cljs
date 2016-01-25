@@ -59,11 +59,6 @@
 (def drawer-section
   (r/adapt-react-class (.-Drawer.Section js/MaterialDesign)))
 
-(defn tab-bar-ios []
-  (r/adapt-react-class (.-TabBarIOS js/React)))
-(defn tab-bar-ios-item []
-  (r/adapt-react-class (.-TabBarIOS.Item js/React)))
-
 ;; Other
 
 (def intent-android
