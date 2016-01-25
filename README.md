@@ -1,9 +1,9 @@
 # What is Luno?
 
-*Luno* is a demo mobile application written in ClojureScript.
+**Luno** is a demo mobile application written in ClojureScript.
 It uses [React Native](https://facebook.github.io/react-native/), [Reagent](https://reagent-project.github.io/), [Re-natal](https://github.com/drapanjanas/re-natal) and a couple of React Native libraries, for example, awesome [React Native Material Design](http://react-native-material-design.github.io/) libraries.
 
-It is just proof-of-concept, and main purpose of Luno is to demonstrate how is it possible to create reusable components,
+It is just proof of concept, and main purpose of Luno is to demonstrate how is it possible to create reusable components,
 how to use Navigation Drawer, Navigator and NavigatorIOS, and how to create apps indistinguishable from native Android or iOS apps.
 
 Luno is not completed, more features are coming.
@@ -17,6 +17,8 @@ But these APIs are limited — for example Bing API allows you to perform 5000 
 see pictures or something works not the way you want it to work, please, obtain your own API keys and try running app again.
 
 ## Screenshots
+
+![Android](https://raw.githubusercontent.com/alwx/luno-react-native/master/_screenshots/android@2x.png)
 
 ## How to run?
 
