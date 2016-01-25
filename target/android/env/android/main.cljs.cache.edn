@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.7.170
+{:use-macros nil, :excludes #{}, :name env.android.main, :imports nil, :requires {core luno.android.core, luno.android.core luno.android.core, figwheel figwheel.client, figwheel.client figwheel.client}, :uses nil, :require-macros {figwheel figwheel.client, figwheel.client figwheel.client}, :cljs.analyzer/constants {:seen #{:heads-up-display :jsload-callback :websocket-url}, :order [:websocket-url :heads-up-display :jsload-callback]}, :doc nil}

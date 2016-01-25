@@ -1,0 +1,10 @@
+{
+  "name": "luno",
+  "modules": [
+    "react-native-button/Button",
+    "react-native-material-design",
+    "react-native-dialogs",
+    "react-native-button"
+  ],
+  "device": "3C1CB8BF-B095-4AA8-A6DB-3D0B3CCD3094"
+}

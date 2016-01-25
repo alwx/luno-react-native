@@ -1,0 +1,25 @@
+(figwheel-android)
+(reset-autobuild)
+(start-autobuild android)
+(quit)
+(figwheel-android)
+(quit)
+(figwheel-android)
+:cljs/quit
+(figwheel-android)
+:cljs/quit
+(figwheel-android)
+:cljs/quit
+(figwheel-android)
+:cljs/quit
+(quit)
+(figwheel-android)
+:cljs/quit
+(figwheel-android)
+:cljs/quit
+(quit)
+(figwheel-android)
+(quit)
+(figwheel-android)
+:cljs/quit
+(quit)
