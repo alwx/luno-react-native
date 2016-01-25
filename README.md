@@ -18,7 +18,7 @@ see pictures or something works not the way you want it to work, please, obtain 
 
 ## Screenshots
 
-![Android](https://raw.githubusercontent.com/alwx/luno-react-native/master/_screenshots/android@2x.png)
+![Android & iOS](https://raw.githubusercontent.com/alwx/luno-react-native/master/_screenshots/android-ios.png)
 
 ## How to run?
 
