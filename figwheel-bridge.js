@@ -30,17 +30,22 @@ var figwheelApp = function (platform, devHost) {
             if (!this.state.loaded) {
                 var plainStyle = {flex: 1, alignItems: 'center', justifyContent: 'center'};
                 return (
-                    <React.View style={plainStyle}>
-                        <React.Text>Waiting for Figwheel to load files.</React.Text>
-                    </React.View>
-                );
+                    < React.View
+                style = {plainStyle} >
+                    < React.Text > Waiting
+                for Figwheel to
+                load
+                files. < / React.Text >
+                < / React.View >
+            )
+                ;
             }
             return this.state.root;
         },
         componentDidMount: function () {
             var app = this;
             if (typeof goog === "undefined") {
-                loadApp(platform, devHost, function(appRoot) {
+                loadApp(platform, devHost, function (appRoot) {
                     app.setState({root: appRoot, loaded: true})
                 });
             }
@@ -163,8 +168,9 @@ function loadApp(platform, devHost, onLoadCb) {
     });
 
     // callback when app is ready to get the reloadable component
+    var mainJs = '/env/' + platform + '/main.js';
     evalListeners.push(function (url) {
-        if (url.indexOf('main.js') > -1) {
+        if (url.indexOf(mainJs) > -1) {
             onLoadCb(env[platform].main.root_el);
             console.log('Done loading Clojure app');
         }
