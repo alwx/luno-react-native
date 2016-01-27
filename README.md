@@ -22,7 +22,13 @@ But these APIs have some limits — for example Bing API allows you to perform 
 see pictures or something works not the way you want it to work, please, obtain your own API keys and try running app again.
 
 ## How to run?
+```
+$ npm i
+$ lein prod-build
+```
+Then run in iOS from xcode or android by `react-native run-android`
 
+## How to run and develop?
 Luno is based on re-natal. Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-natal/blob/master/README.md) to run this app on iOS or Android.
 
 ## TODO
