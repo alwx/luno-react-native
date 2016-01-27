@@ -21,19 +21,19 @@ Both APIs require application IDs, but I don't mind of using my AppIDs (see src/
 But these APIs have some limits — for example Bing API allows you to perform 5000 searches per month. In the case you don't
 see pictures or something works not the way you want it to work, please, obtain your own API keys and try running app again.
 
-## How to run?
+## How to run
 ```
 $ npm i
 $ lein prod-build
 ```
 Then run in iOS from xcode or android by `react-native run-android`
 
-## How to develop?
+## How to develop
 Luno is based on re-natal 0.2.19+.
 
 1. Select your preferred android device
 ```
-$ re-natal use-androd-device real|avd|genymotion
+$ re-natal use-android-device real|avd|genymotion
 ```
 2. Start figwheel
 ```
@@ -44,9 +44,15 @@ $ lein figwheel ios|android
 
 Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-natal/blob/master/README.md) for more information.
 
-## TODO
+## Future plans
 
+* React Native 0.18.1
 * Ability to save cities to internal database
 * Error handling
+
+## Contributors
+
+* Alexander Pantyukhov (@alwx)
+* Artūr Girenko (@drapanjanas)
 
 Feel free to send pull request with any additions. And, of course, I am open for any suggestions for code style, architecture or UI.
