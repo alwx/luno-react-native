@@ -1,6 +1,4 @@
 (ns luno.shared.scenes.main
-  (:require-macros
-    [env.require-img :refer [require-img]])
   (:require
     [re-frame.core :refer [subscribe dispatch dispatch-sync]]
     [reagent.core :as r]

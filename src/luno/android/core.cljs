@@ -1,5 +1,4 @@
 (ns ^:figwheel-load luno.android.core
-  (:require-macros [env.require-img :refer [require-img]])
   (:require [reagent.core :as r :refer [atom]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
             [luno.handlers]
@@ -56,7 +55,7 @@
                  :navigator navigator
                  :style     (get-in s/styles [:scenes :about])}]])
 
-(defn root []
+(defn app-root []
   [ui/navigator {:initial-route   (routes :main)
                  :style           (get-in s/styles [:app])
                  :configure-scene (fn [_ _]
@@ -68,10 +67,6 @@
                                           "main" [wrapped-main-scene {:navigator navigator}]
                                           "about" [wrapped-about-scene {:navigator navigator}]))))}])
 
-(defn mount-root []
-  (r/render [root] 1))
-
-(defn ^:export init []
+(defn init []
   (dispatch-sync [:initialize-db])
-  (fn []
-    (.registerRunnable ui/app-registry "Luno" #(mount-root))))
+  (.registerComponent ui/app-registry "luno" #(r/reactify-component app-root)))

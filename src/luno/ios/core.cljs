@@ -1,5 +1,4 @@
 (ns ^:figwheel-load luno.ios.core
-  (:require-macros [env.require-img :refer [require-img]])
   (:require [reagent.core :as r :refer [atom]]
             [clojure.string :refer [blank?]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
@@ -11,7 +10,7 @@
             [luno.ios.styles :as s]))
 
 (def logo-img
-  (require-img "./images/luno_drawer.png"))
+  (js/require "./images/luno_drawer.png"))
 
 (def cloud-icon
   "data:image/png;base64,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")
@@ -54,7 +53,7 @@
                      :navigator navigator
                      :style     (get-in s/styles [:scenes :about])}]]]]))
 
-(defn root []
+(defn app-root []
   [ui/navigator-ios
    {:initial-route {:title              "Luno"
                     :component          (r/reactify-component root-scene)
@@ -65,10 +64,6 @@
                                                                            (dispatch [:load-weather city]))}))}
     :style         (get-in s/styles [:app])}])
 
-(defn mount-root []
-  (r/render [root] 1))
-
-(defn ^:export init []
+(defn init []
   (dispatch-sync [:initialize-db])
-  (fn []
-    (.registerRunnable ui/app-registry "Luno" #(mount-root))))
+  (.registerComponent ui/app-registry "luno" #(r/reactify-component app-root)))

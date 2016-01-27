@@ -1,1 +1,0 @@
-{"version":3,"file":"\/Users\/alwxndr\/Documents\/Dev\/_my\/Luno\/luno\/target\/ios\/env\/ios\/main.js","sources":["main.cljs"],"lineCount":11,"mappings":";AAAC;;;;AAIA,AAACA;AAEF,2CAAA,uEAAA,kCAAA,6EAAA,MAAA,vOAACC,mTAGiBC;AAEjB,AAACC;AACD,AAACD","names":["cljs.core\/enable-console-print!","figwheel.client\/watch-and-reload","luno.ios.core\/mount-root","luno.ios.core\/init"]}
