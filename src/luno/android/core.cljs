@@ -1,5 +1,6 @@
 (ns ^:figwheel-load luno.android.core
   (:require [reagent.core :as r :refer [atom]]
+            [clojure.string :refer [blank?]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
             [luno.handlers]
             [luno.subs]
@@ -37,11 +38,15 @@
       [main-scene {:platform        :android
                    :navigator       navigator
                    :style           (get-in s/styles [:scenes :main])
-                   :city-wrapper-fn (fn [city component]
+                   :city-wrapper-fn (fn [{city-name :name :as city} component]
                                       (let [media-url (-> (get-in city [:bing-image :MediaUrl]) (str))]
-                                        [ui/card {:style (get-in s/styles [:scenes :main :city-card :card])}
-                                         [ui/card-media {:image (r/as-element [ui/image {:source {:uri media-url}}])}
-                                          component]]))}]]]))
+                                        (if (blank? media-url)
+                                          [ui/card
+                                           [ui/card-body
+                                            [ui/text (str "Fetching weather for " city-name "...")]]]
+                                          [ui/card {:style (get-in s/styles [:scenes :main :city-card :card])}
+                                           [ui/card-media {:image (r/as-element [ui/image {:source {:uri media-url}}])}
+                                            component]])))}]]]))
 
 (defn wrapped-about-scene [{navigator :navigator}]
   [ui/view
