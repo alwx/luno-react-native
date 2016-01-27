@@ -1,2 +1,0 @@
-;; Analyzed by ClojureScript 1.7.170
-{:use-macros nil, :excludes #{}, :name luno.android.routes, :imports nil, :requires nil, :uses nil, :defs {routes {:name luno.android.routes/routes, :file "src/luno/android/routes.cljs", :line 3, :column 1, :end-line 3, :end-column 12, :meta {:file "/Users/alwxndr/Documents/Dev/_my/Luno/luno/src/luno/android/routes.cljs", :line 3, :column 6, :end-line 3, :end-column 12}}}, :require-macros nil, :cljs.analyzer/constants {:seen #{:index :name :main :about}, :order [:main :about :name :index]}, :doc nil}

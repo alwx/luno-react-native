@@ -1,2 +1,0 @@
-;; Analyzed by ClojureScript 1.7.170
-{:name luno.subs, :doc nil, :excludes #{}, :use-macros {reaction reagent.ratom}, :require-macros {reagent.ratom reagent.ratom}, :uses {register-sub re-frame.core}, :requires {re-frame.core re-frame.core}, :imports nil, :cljs.analyzer/constants {:seen #{:ios-tab :get-android-drawer :get-ios-tab :get-data :android-drawer :data}, :order [:get-android-drawer :android-drawer :get-ios-tab :ios-tab :get-data :data]}}
