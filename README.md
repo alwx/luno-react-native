@@ -28,8 +28,21 @@ $ lein prod-build
 ```
 Then run in iOS from xcode or android by `react-native run-android`
 
-## How to run and develop?
-Luno is based on re-natal. Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-natal/blob/master/README.md) to run this app on iOS or Android.
+## How to develop?
+Luno is based on re-natal 0.2.19+.
+
+1. Select your preferred android device
+```
+$ re-natal use-androd-device real|avd|genymotion
+```
+2. Start figwheel
+```
+$ re-natal use-figwheel
+$ lein figwheel ios|android
+```
+3. Run app from xcode (iOS) or `react-native run-android`
+
+Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-natal/blob/master/README.md) for more information.
 
 ## TODO
 
