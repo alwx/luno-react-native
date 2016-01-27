@@ -6,5 +6,9 @@
     "react-native-dialogs",
     "react-native-button"
   ],
-  "device": "3C1CB8BF-B095-4AA8-A6DB-3D0B3CCD3094"
+  "device": "3C1CB8BF-B095-4AA8-A6DB-3D0B3CCD3094",
+  "imageDirs": [
+    "images"
+  ],
+  "androidHost": "10.0.3.2"
 }

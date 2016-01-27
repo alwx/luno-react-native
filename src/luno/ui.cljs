@@ -64,6 +64,9 @@
 (def intent-android
   (.-IntentAndroid js/React))
 
+(def linking-ios
+  (.-LinkingIOS js/React))
+
 ;; Dialogs
 
 (defn show-dialog-android [props]
