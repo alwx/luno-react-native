@@ -40,3 +40,6 @@ index.ios.js
 # Figwheel
 #
 figwheel_server.log
+
+target/
+*.iml
