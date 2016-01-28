@@ -1,4 +1,4 @@
-(ns luno.db
+(ns luno.schema
   (:require [schema.core :as s :include-macros true]))
 
 ;; schema of app-db

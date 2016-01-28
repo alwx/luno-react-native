@@ -5,6 +5,7 @@
             [luno.handlers]
             [luno.subs]
             [luno.ui :as ui]
+            [luno.android.controls :as controls]
             [luno.android.styles :as s]
             [luno.android.routes :refer [routes]]
             [luno.android.components.drawer :refer [drawer-component]]
@@ -12,11 +13,11 @@
             [luno.shared.scenes.about :refer [about-scene]]))
 
 (defn show-add-dialog []
-  (ui/show-dialog-android {:title        "Add city"
-                           :input        {:hint     "Please, input city's name"
-                                          :callback (fn [text]
-                                                      (dispatch [:load-weather text]))}
-                           :positiveText "Add"}))
+  (controls/show-dialog {:title        "Add city"
+                         :input        {:hint     "Please, input city's name"
+                                        :callback (fn [text]
+                                                    (dispatch [:load-weather text]))}
+                         :positiveText "Add"}))
 
 (defn wrapped-main-scene [{navigator :navigator}]
   (let [drawer (subscribe [:get-android-drawer])]
@@ -66,7 +67,7 @@
                  :configure-scene (fn [_ _]
                                     js/React.Navigator.SceneConfigs.FloatFromBottomAndroid)
                  :render-scene    (fn [route navigator]
-                                    (let [route  (js->clj route :keywordize-keys true)]
+                                    (let [route (js->clj route :keywordize-keys true)]
                                       (r/as-element
                                         (condp = (:name route)
                                           "main" [wrapped-main-scene {:navigator navigator}]

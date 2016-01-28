@@ -11,8 +11,13 @@
    :toolbar   {:position         "relative"
                :background-color "#01579B"}
    :scenes    {:main  {:view      {:align-items "stretch"
-                                   :margin-top 64}
-                       :city-card {:title       {:font-size 22
+                                   :margin-top  64}
+                       :city-card {:card        {:height     105
+                                                 :flex       1
+                                                 :resizeMode "cover"}
+                                   :view        {:padding          10
+                                                 :background-color "transparent"}
+                                   :title       {:font-size 22
                                                  :color     "white"}
                                    :temp        {:font-size   22
                                                  :font-weight "bold"

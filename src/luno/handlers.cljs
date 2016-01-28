@@ -5,7 +5,7 @@
     [clojure.walk :refer [keywordize-keys]]
     [ajax.core :refer [GET POST]]
     [luno.config :refer [openweathermap-appid bing-appid]]
-    [luno.db :refer [app-db schema]]))
+    [luno.schema :refer [app-db schema]]))
 
 ;; -- Middleware ------------------------------------------------------------
 

@@ -67,14 +67,5 @@
 (def linking-ios
   (.-LinkingIOS js/React))
 
-;; Dialogs
 
-(defn show-dialog-android [props]
-  (let [dialog (new js/AndroidDialog)]
-    (.set dialog (clj->js props))
-    (.show dialog)))
-
-(defn show-dialog-ios [{text     :text
-                        callback :callback}]
-  (.prompt (.-AlertIOS js/React) text nil callback))
 
