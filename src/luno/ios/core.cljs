@@ -2,7 +2,6 @@
   (:require [reagent.core :as r :refer [atom]]
             [clojure.string :refer [blank?]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
-            [luno.shared.core]
             [luno.handlers]
             [luno.subs]
             [luno.shared.ui :as ui]

@@ -41,5 +41,4 @@
                                                              :compiler     {:output-to     "index.android.js"
                                                                             :main          "env.android.main"
                                                                             :output-dir    "target/android"
-                                                                            :optimizations :simple}}}}
-                              }})
+                                                                            :optimizations :simple}}}}}})
