@@ -30,13 +30,13 @@
   :set-android-drawer
   validate-schema-mw
   (fn [db [_ value]]
-    (assoc db :android-drawer value)))
+    (assoc-in db [:android :drawer] value)))
 
 (register-handler
   :set-ios-tab
   validate-schema-mw
   (fn [db [_ value]]
-    (assoc db :ios-tab value)))
+    (assoc-in db [:ios :tab] value)))
 
 (register-handler
   :load-weather

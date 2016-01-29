@@ -6,13 +6,13 @@
   :get-android-drawer
   (fn [db _]
     (reaction
-      (get @db :android-drawer))))
+      (get-in @db [:android :drawer]))))
 
 (register-sub
   :get-ios-tab
   (fn [db _]
     (reaction
-      (get @db :ios-tab))))
+      (get-in @db [:ios :tab]))))
 
 (register-sub
   :get-data

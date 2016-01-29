@@ -3,8 +3,8 @@
     [re-frame.core :refer [subscribe dispatch dispatch-sync]]
     [reagent.core :as r]
     [luno.shared.ui :as ui]
-    [luno.android.controls :refer [intent]]
-    [luno.ios.controls :refer [linking]]))
+    [luno.android.ui :as android-ui]
+    [luno.ios.ui :as ios-ui]))
 
 (def github-link
   "http://github.com/alwx/luno-react-native")
@@ -20,7 +20,7 @@
    [ui/text {:style (get style :author)}
     "By alwx (alwxndr@gmail.com)"]
    (condp = platform
-     :android [ui/button {:text     "GITHUB"
-                          :on-press #(.openURL intent github-link)}]
-     :ios [ui/button-ios {:on-press #(.openURL linking github-link)}
+     :android [android-ui/button {:text     "GITHUB"
+                                  :on-press #(.openURL android-ui/intent github-link)}]
+     :ios [ios-ui/button {:on-press #(.openURL ios-ui/linking github-link)}
            "GitHub"])])
