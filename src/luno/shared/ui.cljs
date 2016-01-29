@@ -1,10 +1,5 @@
-(ns luno.ui
+(ns luno.shared.ui
   (:require [reagent.core :as r]))
-
-(set! js/React (js/require "react-native"))
-(set! js/MaterialDesign (js/require "react-native-material-design"))
-(set! js/IOSButton (js/require "react-native-button"))
-(set! js/AndroidDialog (js/require "react-native-dialogs"))
 
 (def app-registry
   (.-AppRegistry js/React))
@@ -58,14 +53,6 @@
   (r/adapt-react-class (.-Drawer.Header js/MaterialDesign)))
 (def drawer-section
   (r/adapt-react-class (.-Drawer.Section js/MaterialDesign)))
-
-;; Other
-
-(def intent-android
-  (.-IntentAndroid js/React))
-
-(def linking-ios
-  (.-LinkingIOS js/React))
 
 
 

@@ -2,15 +2,16 @@
   (:require [reagent.core :as r :refer [atom]]
             [clojure.string :refer [blank?]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
+            [luno.shared.core]
             [luno.handlers]
             [luno.subs]
-            [luno.ui :as ui]
+            [luno.shared.ui :as ui]
+            [luno.shared.scenes.main :refer [main-scene]]
+            [luno.shared.scenes.about :refer [about-scene]]
             [luno.android.controls :as controls]
             [luno.android.styles :as s]
             [luno.android.routes :refer [routes]]
-            [luno.android.components.drawer :refer [drawer-component]]
-            [luno.shared.scenes.main :refer [main-scene]]
-            [luno.shared.scenes.about :refer [about-scene]]))
+            [luno.android.components.drawer :refer [drawer-component]]))
 
 (defn show-add-dialog []
   (controls/show-dialog {:title        "Add city"

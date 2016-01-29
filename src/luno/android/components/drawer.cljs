@@ -1,7 +1,7 @@
 (ns luno.android.components.drawer
   (:require
     [reagent.core :as r]
-    [luno.ui :as ui]
+    [luno.shared.ui :as ui]
     [luno.android.routes :refer [routes]]))
 
 (def logo-img

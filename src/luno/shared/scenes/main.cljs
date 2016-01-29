@@ -2,7 +2,7 @@
   (:require
     [re-frame.core :refer [subscribe dispatch dispatch-sync]]
     [reagent.core :as r]
-    [luno.ui :as ui]
+    [luno.shared.ui :as ui]
     [luno.shared.components.city :refer [city-component]]))
 
 (defn main-scene [{platform        :platform

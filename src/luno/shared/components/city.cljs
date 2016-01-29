@@ -1,7 +1,7 @@
 (ns luno.shared.components.city
   (:require
     [reagent.core :as r]
-    [luno.ui :as ui]))
+    [luno.shared.ui :as ui]))
 
 (defn to-celsius [temp]
   (.toFixed (- temp 273.15) 2))
