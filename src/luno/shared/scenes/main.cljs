@@ -5,9 +5,7 @@
     [luno.shared.ui :as ui]
     [luno.shared.components.city :refer [city-component]]))
 
-(defn main-scene [{platform        :platform
-                   navigator       :navigator
-                   city-wrapper-fn :city-wrapper-fn
+(defn main-scene [{city-wrapper-fn :city-wrapper-fn
                    style           :style}]
   (let [data   (subscribe [:get-data])
         cities (vals @data)]

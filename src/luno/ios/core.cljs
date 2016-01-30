@@ -5,8 +5,6 @@
             [luno.handlers]
             [luno.subs]
             [luno.shared.ui :as ui]
-            [luno.shared.scenes.about :refer [about-scene]]
-            [luno.shared.scenes.main :refer [main-scene]]
             [luno.ios.ui :as ios-ui]
             [luno.ios.styles :as s]
             [luno.ios.scenes.root :refer [root-scene]]))

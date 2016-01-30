@@ -21,9 +21,7 @@
                            :selected (= @tab "main")
                            :on-press #(dispatch [:set-ios-tab "main"])
                            :title    "Weather"}
-      [main-scene {:platform        :ios
-                   :navigator       navigator
-                   :style           (get-in s/styles [:scenes :main])
+      [main-scene {:style           (get-in s/styles [:scenes :main])
                    :city-wrapper-fn (fn [city component]
                                       (let [media-url (-> (get-in city [:bing-image :MediaUrl]) (str))]
                                         (when-not (blank? media-url)
@@ -36,6 +34,7 @@
                            :on-press #(dispatch [:set-ios-tab "about"])
                            :title    "About"}
       [ui/view
-       [about-scene {:platform  :ios
-                     :navigator navigator
-                     :style     (get-in s/styles [:scenes :about])}]]]]))
+       [about-scene {:style            (get-in s/styles [:scenes :about])
+                     :github-button-fn (fn [link]
+                                         [ios-ui/button {:on-press #(.openURL ios-ui/linking link)}
+                                          "GitHub"])}]]]]))

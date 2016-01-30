@@ -36,9 +36,7 @@
                            :style         (get-in s/styles [:toolbar])
                            :on-icon-press (fn [_]
                                             (.openDrawer @drawer))}]
-      [main-scene {:platform        :android
-                   :navigator       navigator
-                   :style           (get-in s/styles [:scenes :main])
+      [main-scene {:style           (get-in s/styles [:scenes :main])
                    :city-wrapper-fn (fn [{city-name :name :as city} component]
                                       (let [media-url (-> (get-in city [:bing-image :MediaUrl]) (str))]
                                         (if (blank? media-url)
@@ -57,9 +55,10 @@
                         :style         (get-in s/styles [:toolbar])
                         :on-icon-press (fn [_]
                                          (.pop navigator))}]
-   [about-scene {:platform  :android
-                 :navigator navigator
-                 :style     (get-in s/styles [:scenes :about])}]])
+   [about-scene {:style            (get-in s/styles [:scenes :about])
+                 :github-button-fn (fn [link]
+                                     [android-ui/button {:text     "GITHUB"
+                                                         :on-press #(.openURL android-ui/intent link)}])}]])
 
 (defn app-root []
   [android-ui/navigator {:initial-route   (routes :main)
