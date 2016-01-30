@@ -15,9 +15,16 @@
 
 (def linking
   (.-LinkingIOS js/React))
+(def action-sheet
+  (.-ActionSheetIOS js/React))
 
 (defn show-dialog [{text     :text
                     callback :callback}]
   (.prompt (.-AlertIOS js/React) text nil callback))
+
+(defn show-action-sheet [options callback]
+  (.showActionSheetWithOptions (.-ActionSheetIOS js/React)
+                               (clj->js options)
+                               callback))
 
 

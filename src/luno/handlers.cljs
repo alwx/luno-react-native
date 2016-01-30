@@ -5,7 +5,8 @@
     [clojure.walk :refer [keywordize-keys]]
     [ajax.core :refer [GET POST]]
     [luno.config :refer [openweathermap-appid bing-appid]]
-    [luno.schema :refer [app-db schema]]))
+    [luno.schema :refer [app-db schema]]
+    [luno.db :as db]))
 
 ;; -- Middleware ------------------------------------------------------------
 
@@ -25,6 +26,27 @@
   validate-schema-mw
   (fn [_ _]
     app-db))
+
+(register-handler
+  :load-from-db
+  (fn [db [_ model-type]]
+    (db/load model-type (fn [response]
+                          (let [handler-name (->> (name model-type)
+                                                  (str "load-from-db-")
+                                                  (keyword))]
+                            (dispatch [handler-name response]))))
+    db))
+
+(register-handler
+  :load-from-db-city
+  (fn [db [_ data]]
+    (->> data
+         (map (fn [city]
+                (let [{:keys [name]
+                       :as   city} (keywordize-keys (js->clj city))]
+                  [name city])))
+         (into {})
+         (assoc db :data))))
 
 (register-handler
   :set-android-drawer
@@ -50,11 +72,13 @@
 (register-handler
   :load-weather-success
   (fn [db [_ [response city]]]
-    (dispatch [:load-city-image city])
-    (-> db
-        (assoc :error nil)
-        (assoc-in [:data city] (keywordize-keys response))
-        (assoc :loading? false))))
+    (let [city-object (keywordize-keys response)]
+      (dispatch [:load-city-image city])
+      (db/upsert! :city {:where {:name {:eq city}}} city-object)
+      (-> db
+          (assoc :error nil)
+          (assoc-in [:data city] city-object)
+          (assoc :loading? false)))))
 
 (register-handler
   :load-weather-failure
@@ -76,14 +100,24 @@
 (register-handler
   :load-city-image-success
   (fn [db [_ [response city]]]
-    (let [result (-> response
-                     (keywordize-keys)
-                     :d
-                     :results
-                     (first))]
-      (assoc-in db [:data city :bing-image] result))))
+    (let [result      (-> response
+                          (keywordize-keys)
+                          :d
+                          :results
+                          (first))
+          city-object (-> (get-in db [:data city])
+                          (assoc :bing-image result))]
+      (db/upsert! :city {:where {:name {:eq city}}} city-object)
+      (assoc-in db [:data city] city-object))))
 
 (register-handler
   :load-city-image-failure
   (fn [db [_ [e city]]]
     (assoc-in db [:data city :bing-image] nil)))
+
+(register-handler
+  :delete-city
+  (fn [db [_ city]]
+    (db/remove! :city {:where {:name {:eq city}}})
+    (update db :data (fn [v]
+                       (dissoc v city)))))

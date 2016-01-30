@@ -1,24 +1,27 @@
 # Change Log
-All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
+All notable changes to this project will be documented in this file.
 
-## [Unreleased][unreleased]
-### Changed
-- Add a new arity to `make-widget-async` to provide a different widget shape.
+## [0.2.0] - 2016-01-31
+### Added
+- Internal database (react-native-store) — now Luno saves your cities and loads them on relaunch;
+- Ability to delete cities;
+- "Changelog" button on "About" screen;
+- iOS only: ActionSheetIOS for deletion;
+- Android only: MaterialDialog for deletion;
 
-## [0.1.1] - 2016-01-08
 ### Changed
-- Documentation on how to make the widgets.
+- Updated version of Re-natal (0.2.19);
+- Updated version of React Native (0.18.1);
+- [refactor] Improved code structure;
 
 ### Removed
-- `make-widget-sync` - we're all async, all the time.
+- ^:figwheel-load annotation from core.cljs;
+— "Please, add cities" message;
 
-### Fixed
-- Fixed widget maker to keep working when daylight savings switches over.
-
-## 0.1.0 - 2016-01-08
+## 0.1.0 - 2016-01-26
 ### Added
-- Files from the new template.
-- Widget maker public API - `make-widget-sync`.
+- Basic UI;
+- Reusable components for iOS and Android;
+- HTTP Client with ability to load images and weather information from different sources.
 
-[unreleased]: https://github.com/your-name/luno/compare/0.1.1...HEAD
-[0.1.1]: https://github.com/your-name/luno/compare/0.1.0...0.1.1
+[0.2.0]: https://github.com/alwx/luno-react-native/compare/d3242d92638816ab285ddc53546c4a70404e8dd1...0.2.0

@@ -4,6 +4,7 @@
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
             [luno.handlers]
             [luno.subs]
+            [luno.db :as db]
             [luno.shared.ui :as ui]
             [luno.ios.ui :as ios-ui]
             [luno.ios.styles :as s]
@@ -11,15 +12,16 @@
 
 (defn app-root []
   [ios-ui/navigator
-   {:initial-route {:title              "Luno"
-                    :component          (r/reactify-component root-scene)
-                    :rightButtonTitle   "Add city"
-                    :onRightButtonPress (fn [_]
-                                          (ios-ui/show-dialog {:text     "Please, input city's name"
-                                                               :callback (fn [city]
-                                                                           (dispatch [:load-weather city]))}))}
+   {:initial-route {:title                 "Luno"
+                    :component             (r/reactify-component root-scene)
+                    :right-button-title    "Add city"
+                    :on-right-button-press (fn [_]
+                                             (ios-ui/show-dialog {:text     "Please, input city's name"
+                                                                  :callback (fn [city]
+                                                                              (dispatch [:load-weather city]))}))}
     :style         (get-in s/styles [:app])}])
 
 (defn init []
   (dispatch-sync [:initialize-db])
+  (dispatch [:load-from-db :city])
   (.registerComponent ui/app-registry "luno" #(r/reactify-component app-root)))

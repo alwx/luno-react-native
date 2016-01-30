@@ -21,5 +21,8 @@
 (def input
   (r/adapt-react-class (.-TextInput js/React)))
 
+(def touchable
+  (r/adapt-react-class (.-TouchableWithoutFeedback js/React)))
+
 
 

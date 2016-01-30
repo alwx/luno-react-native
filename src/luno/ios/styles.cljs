@@ -10,8 +10,7 @@
                :height           26}
    :toolbar   {:position         "relative"
                :background-color "#01579B"}
-   :scenes    {:main  {:view      {:align-items "stretch"
-                                   :margin-top  64}
+   :scenes    {:main  {:view      {:align-items "stretch"}
                        :city-card {:card        {:height     105
                                                  :flex       1
                                                  :resizeMode "cover"}
@@ -28,9 +27,9 @@
                                    :key         {:color "white"}
                                    :value       {:font-weight "bold"
                                                  :color       "white"}}}
-               :about {:view   {:margin-top 64
-                                :padding    16}
-                       :title  {:font-weight   "bold"
-                                :margin-bottom 4}
-                       :author {:margin-top    4
-                                :margin-bottom 20}}}})
+               :about {:view            {:padding 16
+                                         :flex    1}
+                       :title           {:font-weight   "bold"
+                                         :margin-bottom 4}
+                       :author          {:margin-top    4
+                                         :margin-bottom 20}}}})

@@ -19,6 +19,13 @@
                                                       (dispatch [:load-weather text]))}
                            :positiveText "Add"}))
 
+(defn city-click [name]
+  (android-ui/show-dialog {:content      "Do you want to delete this city?"
+                           :positiveText "Yes"
+                           :negativeText "No"
+                           :onPositive   (fn []
+                                           (dispatch [:delete-city name]))}))
+
 (defn wrapped-main-scene [{navigator :navigator}]
   (let [drawer (subscribe [:get-android-drawer])]
     [android-ui/drawer-layout {:drawer-width           300
@@ -45,7 +52,8 @@
                                             [ui/text (str "Fetching weather for " city-name "...")]]]
                                           [android-ui/card {:style (get-in s/styles [:scenes :main :city-card :card])}
                                            [android-ui/card-media {:image (r/as-element [ui/image {:source {:uri media-url}}])}
-                                            component]])))}]]]))
+                                            [ui/touchable {:on-long-press (fn [_] (city-click city-name))}
+                                             component]]])))}]]]))
 
 (defn wrapped-about-scene [{navigator :navigator}]
   [ui/view
@@ -55,10 +63,13 @@
                         :style         (get-in s/styles [:toolbar])
                         :on-icon-press (fn [_]
                                          (.pop navigator))}]
-   [about-scene {:style            (get-in s/styles [:scenes :about])
-                 :github-button-fn (fn [link]
-                                     [android-ui/button {:text     "GITHUB"
-                                                         :on-press #(.openURL android-ui/intent link)}])}]])
+   [about-scene {:style               (get-in s/styles [:scenes :about])
+                 :github-button-fn    (fn [link]
+                                        [android-ui/button {:text     "GITHUB"
+                                                            :on-press #(.openURL android-ui/intent link)}])
+                 :changelog-button-fn (fn [link]
+                                        [android-ui/button {:text     "CHANGELOG"
+                                                            :on-press #(.openURL android-ui/intent link)}])}]])
 
 (defn app-root []
   [android-ui/navigator {:initial-route   (routes :main)
@@ -74,4 +85,5 @@
 
 (defn init []
   (dispatch-sync [:initialize-db])
+  (dispatch [:load-from-db :city])
   (.registerComponent ui/app-registry "luno" #(r/reactify-component app-root)))

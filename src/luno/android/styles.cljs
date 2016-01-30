@@ -28,8 +28,8 @@
                                    :key         {:color "white"}
                                    :value       {:font-weight "bold"
                                                  :color       "white"}}}
-               :about {:view   {:padding 16}
-                       :title  {:font-weight   "bold"
-                                :margin-bottom 4}
-                       :author {:margin-top    4
-                                :margin-bottom 12}}}})
+               :about {:view            {:padding 16}
+                       :title           {:font-weight   "bold"
+                                         :margin-bottom 4}
+                       :author          {:margin-top    4
+                                         :margin-bottom 20}}}})
