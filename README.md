@@ -46,9 +46,10 @@ Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-nata
 
 ## Future plans
 
-* React Native 0.18.1
-* Ability to save cities to internal database
-* Error handling
+* Error handling and more responsive UI;
+* Experiments with Toolbar on Android (it is good idea to move Add field to Toolbar);
+* Pull to refresh to update weather;
+* Widgets (?)
 
 ## Contributors
 
