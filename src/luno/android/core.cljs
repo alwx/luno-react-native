@@ -1,4 +1,4 @@
-(ns ^:figwheel-load luno.android.core
+(ns luno.android.core
   (:require [reagent.core :as r :refer [atom]]
             [clojure.string :refer [blank?]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
