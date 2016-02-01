@@ -19,13 +19,13 @@
 (def validate-schema-mw
   (after (partial check-and-throw schema)))
 
-;; -- Handlers --------------------------------------------------------------
-
 (register-handler
-  :initialize-db
+  :initialize-schema
   validate-schema-mw
   (fn [_ _]
     app-db))
+
+;; -- DB handlers -------------------------------------------------------------
 
 (register-handler
   :load-from-db
@@ -48,17 +48,7 @@
          (into {})
          (assoc db :data))))
 
-(register-handler
-  :set-android-drawer
-  validate-schema-mw
-  (fn [db [_ value]]
-    (assoc-in db [:android :drawer] value)))
-
-(register-handler
-  :set-ios-tab
-  validate-schema-mw
-  (fn [db [_ value]]
-    (assoc-in db [:ios :tab] value)))
+;; -- Network handlers --------------------------------------------------------
 
 (register-handler
   :load-weather
@@ -114,6 +104,20 @@
   :load-city-image-failure
   (fn [db [_ [e city]]]
     (assoc-in db [:data city :bing-image] nil)))
+
+;; -- Other handlers ----------------------------------------------------------
+
+(register-handler
+  :set-android-drawer
+  validate-schema-mw
+  (fn [db [_ value]]
+    (assoc-in db [:android :drawer] value)))
+
+(register-handler
+  :set-ios-tab
+  validate-schema-mw
+  (fn [db [_ value]]
+    (assoc-in db [:ios :tab] value)))
 
 (register-handler
   :delete-city

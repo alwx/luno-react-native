@@ -5,6 +5,11 @@
 (defn model [type]
   (.model js/Store (name type)))
 
+(defn load [type result-fn]
+  (let [model (model type)]
+    (-> (.find model)
+        (.then result-fn))))
+
 (defn upsert! [type filter data]
   (let [model  (model type)
         filter (clj->js filter)
@@ -15,11 +20,14 @@
                    (.update model data filter)
                    (.add model data)))))))
 
+(defn insert! [type data]
+  (let [model (model type)]
+    (.add model (clj->js data))))
+
 (defn remove! [type filter]
   (let [model (model type)]
     (.remove model)))
 
-(defn load [type result-fn]
+(defn remove-all! [type]
   (let [model (model type)]
-    (-> (.find model)
-        (.then result-fn))))
+    (.destroy model)))

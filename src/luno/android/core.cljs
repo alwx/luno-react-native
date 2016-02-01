@@ -84,6 +84,6 @@
                                                   "about" [wrapped-about-scene {:navigator navigator}]))))}])
 
 (defn init []
-  (dispatch-sync [:initialize-db])
+  (dispatch-sync [:initialize-schema])
   (dispatch [:load-from-db :city])
   (.registerComponent ui/app-registry "luno" #(r/reactify-component app-root)))
