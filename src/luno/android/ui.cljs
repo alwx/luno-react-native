@@ -30,9 +30,6 @@
 (def drawer-section
   (r/adapt-react-class (.-Drawer.Section js/MaterialDesign)))
 
-(def intent
-  (.-IntentAndroid js/React))
-
 (defn show-dialog [props]
   (let [dialog (new js/AndroidDialog)]
     (.set dialog (clj->js props))

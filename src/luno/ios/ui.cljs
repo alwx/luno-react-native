@@ -13,11 +13,6 @@
 (def button
   (r/adapt-react-class js/IOSButton))
 
-(def linking
-  (.-LinkingIOS js/React))
-(def action-sheet
-  (.-ActionSheetIOS js/React))
-
 (defn show-dialog [{text     :text
                     callback :callback}]
   (.prompt (.-AlertIOS js/React) text nil callback))

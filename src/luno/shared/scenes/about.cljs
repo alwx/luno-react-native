@@ -16,7 +16,7 @@
   [ui/scroll {:style (get style :view)}
    [ui/view
     [ui/text {:style (get style :title)}
-     "Luno 0.2.0"]
+     "Luno 0.3.0"]
     [ui/text "Cross-platform React Native application written in ClojureScript"]
     [ui/text {:style (get style :author)}
      "By alwx (alwxndr@gmail.com)"]

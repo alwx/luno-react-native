@@ -58,7 +58,7 @@
                  {:style               (get-in s/styles [:scenes :about])
                   :github-button-fn    (fn [link]
                                          [android-ui/button {:text     "GITHUB"
-                                                             :on-press #(.openURL android-ui/intent link)}])
+                                                             :on-press #(.openURL ui/linking link)}])
                   :changelog-button-fn (fn [link]
                                          [android-ui/button {:text     "CHANGELOG"
-                                                             :on-press #(.openURL android-ui/intent link)}])}])]]))
+                                                             :on-press #(.openURL ui/linking link)}])}])]]))

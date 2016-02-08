@@ -24,5 +24,7 @@
 (def touchable
   (r/adapt-react-class (.-TouchableWithoutFeedback js/React)))
 
+(def linking
+  (.-Linking js/React))
 
 
