@@ -9,10 +9,10 @@
       (get-in @db [:android :drawer]))))
 
 (register-sub
-  :get-ios-tab
+  :get-shared-tab
   (fn [db _]
     (reaction
-      (get-in @db [:ios :tab]))))
+      (get-in @db [:shared :tab]))))
 
 (register-sub
   :get-data

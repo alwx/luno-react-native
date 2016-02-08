@@ -23,11 +23,11 @@
                                 (dispatch [:delete-city name])))))
 
 (defn root-scene [{navigator :navigator}]
-  (let [tab (subscribe [:get-ios-tab])]
+  (let [tab (subscribe [:get-shared-tab])]
     [ios-ui/tab-bar
      [ios-ui/tab-bar-item {:icon     {:uri cloud-icon :scale 4}
                            :selected (= @tab "main")
-                           :on-press #(dispatch [:set-ios-tab "main"])
+                           :on-press #(dispatch [:set-shared-tab "main"])
                            :title    "Weather"}
       [main-scene {:style           (get-in s/styles [:scenes :main])
                    :city-wrapper-fn (fn [{city-name :name :as city} component]
@@ -40,7 +40,7 @@
                                              component]]])))}]]
      [ios-ui/tab-bar-item {:icon     {:uri info-icon :scale 5}
                            :selected (= @tab "about")
-                           :on-press #(dispatch [:set-ios-tab "about"])
+                           :on-press #(dispatch [:set-shared-tab "about"])
                            :title    "About"}
       [about-scene {:style               (get-in s/styles [:scenes :about])
                     :github-button-fn    (fn [link]

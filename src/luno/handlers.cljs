@@ -114,10 +114,10 @@
     (assoc-in db [:android :drawer] value)))
 
 (register-handler
-  :set-ios-tab
+  :set-shared-tab
   validate-schema-mw
   (fn [db [_ value]]
-    (assoc-in db [:ios :tab] value)))
+    (assoc-in db [:shared :tab] value)))
 
 (register-handler
   :delete-city
