@@ -11,5 +11,11 @@
   "imageDirs": [
     "images"
   ],
-  "androidHost": "localhost"
+  "androidHost": "localhost",
+  "interface": "reagent",
+  "iosHost": "localhost",
+  "envRoots": {
+    "dev": "env/dev",
+    "prod": "env/prod"
+  }
 }
