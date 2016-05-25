@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.3.0] - 2016-05-25
+## [0.3.1] - 2016-05-25
 ### Changed
 - Updated dependencies (new versions of re-natal and React Native!);
 
