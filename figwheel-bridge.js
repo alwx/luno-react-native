@@ -79,7 +79,6 @@ function customEval(url, javascript, success, error) {
                 });
                 success();
             } catch (e) {
-                console.error('Evaluation error in: ' + url);
                 console.error(e);
                 error();
             }
@@ -109,7 +108,6 @@ function asyncImportScripts(url, success, error) {
             return customEval(url, responseText, success, error);
         })
         .catch(function (error) {
-            console.error('Error loading script, please check your config setup.');
             console.error(error);
             return error();
         });
@@ -124,6 +122,7 @@ function syncImportScripts(url, success, error) {
         });
         success();
     } catch (e) {
+        console.error(e);
         error()
     }
 }

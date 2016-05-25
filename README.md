@@ -1,13 +1,19 @@
 # What is Luno?
 
 **Luno** is a demo mobile application written in ClojureScript.
-It uses [React Native](https://facebook.github.io/react-native/), [Reagent](https://reagent-project.github.io/), [Re-natal](https://github.com/drapanjanas/re-natal) and a couple of React Native libraries, for example, awesome [React Native Material Design](http://react-native-material-design.github.io/).
+It uses
+[React Native](https://facebook.github.io/react-native/),
+[Reagent](https://reagent-project.github.io/),
+[Re-natal](https://github.com/drapanjanas/re-natal)
+and a couple of React Native libraries, for example, awesome
+[React Native Material Design](http://react-native-material-design.github.io/).
 
 It is just proof of concept, and main purpose of Luno is to demonstrate how to create reusable components,
-use Navigation Drawer, Navigator and NavigatorIOS, how to work with native libraries (it uses [Material Dialogs](https://github.com/afollestad/material-dialogs) for Android)
+use Navigation Drawer, Navigator and NavigatorIOS, how to work with native libraries
+(it uses [Material Dialogs](https://github.com/afollestad/material-dialogs) for Android)
 and how to create apps indistinguishable from native Android or iOS apps.
 
-Luno is not completed, more features are coming.
+Luno is not completed, but may be used like a demonstration of how to use react-native in your project.
 
 ## Screenshots
 
@@ -18,8 +24,9 @@ Luno is not completed, more features are coming.
 Luno uses OpenWeatherMap API to load information about weather, and Bing Search API to load images.
 Both APIs require application IDs, but I don't mind of using my AppIDs (see src/luno/config.cljs for keys)
 
-But these APIs have some limits — for example Bing API allows you to perform 5000 searches per month. In the case you don't
-see pictures or something works not the way you want it to work, please, obtain your own API keys and try running app again.
+But these APIs have some limits — for example Bing API allows you to perform 5000 searches per month.
+In the case you don't see pictures or something works not the way you want it to work, please, obtain your own
+API keys and try running app again.
 
 ## How to run
 ```
@@ -29,7 +36,7 @@ $ lein prod-build
 Then run in iOS from xcode or android by `react-native run-android`
 
 ## How to develop
-Luno is based on re-natal 0.2.19+.
+Luno is based on re-natal.
 
 1. Select your preferred android device
 ```
@@ -55,5 +62,7 @@ Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-nata
 
 * Alexander Pantyukhov (@alwx)
 * Artūr Girenko (@drapanjanas)
+* Alexander Kirillov (@saratovsource)
 
-Feel free to send pull request with any additions. And, of course, I am open for any suggestions for code style, architecture or UI.
+Feel free to send pull request with any additions. And, of course, I am open for any suggestions for code style,
+architecture or UI.
