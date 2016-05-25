@@ -38,4 +38,4 @@ All notable changes to this project will be documented in this file.
 
 [0.2.0]: https://github.com/alwx/luno-react-native/compare/d3242d92638816ab285ddc53546c4a70404e8dd1...0.2.0
 [0.3.0]: https://github.com/alwx/luno-react-native/compare/0.2.0...0.3.0
-[0.3.0]: https://github.com/alwx/luno-react-native/compare/0.3.0...0.3.1
+[0.3.1]: https://github.com/alwx/luno-react-native/compare/0.3.0...0.3.1
