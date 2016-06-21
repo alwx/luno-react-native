@@ -1,8 +1,0 @@
-// Compiled by ClojureScript 1.7.170 {}
-goog.provide('luno.schema');
-goog.require('cljs.core');
-goog.require('schema.core');
-luno.schema.schema = new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"android","android",-2084094573),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"drawer","drawer",-1346127858),schema.core.Any], null),new cljs.core.Keyword(null,"shared","shared",-384145993),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tab","tab",-559583621),schema.core.Str], null),new cljs.core.Keyword(null,"data","data",-232669377),schema.core.Any,new cljs.core.Keyword(null,"error","error",-978969032),schema.core.Any,new cljs.core.Keyword(null,"loading?","loading?",1905707049),schema.core.Bool], null);
-luno.schema.app_db = new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"android","android",-2084094573),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"drawer","drawer",-1346127858),null], null),new cljs.core.Keyword(null,"shared","shared",-384145993),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tab","tab",-559583621),"main"], null),new cljs.core.Keyword(null,"data","data",-232669377),null,new cljs.core.Keyword(null,"error","error",-978969032),null,new cljs.core.Keyword(null,"loading?","loading?",1905707049),false], null);
-
-//# sourceMappingURL=schema.js.map
