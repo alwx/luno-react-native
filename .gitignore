@@ -32,3 +32,8 @@ local.properties
 #
 node_modules/
 npm-debug.log
+
+# CLJS
+figwheel_server.log
+
+target
