@@ -63,6 +63,7 @@ Please, refer to [re-natal documentation](https://github.com/drapanjanas/re-nata
 * Alexander Pantyukhov (@alwx)
 * Artūr Girenko (@drapanjanas)
 * Alexander Kirillov (@saratovsource)
+* Markku Rontu (@Macroz)
 
 Feel free to send pull request with any additions. And, of course, I am open for any suggestions for code style,
 architecture or UI.
